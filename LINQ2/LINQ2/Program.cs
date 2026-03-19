@@ -7,6 +7,7 @@
             Console.WriteLine("1. Where");
             Console.WriteLine("2. OrderBy");
             Console.WriteLine("3. Select");
+            Console.WriteLine("4. Skip");
 
             int choise = int.Parse(Console.ReadLine());
 
@@ -22,6 +23,10 @@
 
                 case 3:
                     Select();
+                    break;
+
+                case 4:
+                    Skip();
                     break;
 
                 default:
@@ -65,6 +70,17 @@
             foreach (var item in select)
             {
                 Console.WriteLine(item.Category);
+            }
+        }
+        public static void Skip()
+        {
+            var Skip = ProductData.Products
+                .OrderBy(x => x.Price);
+            var skip = ProductData.Products.Skip(4);
+
+            foreach (var item in skip)
+            {
+                Console.WriteLine(item.Name);
             }
         }
     }
