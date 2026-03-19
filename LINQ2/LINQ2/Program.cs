@@ -9,6 +9,9 @@
             Console.WriteLine("3. Select");
             Console.WriteLine("4. Skip");
             Console.WriteLine("5. TakeWhile");
+            Console.WriteLine("6. FirstOrDefault");
+            Console.WriteLine("7. Average, Max, Count");
+            Console.WriteLine("8. Any");
 
             int choise = int.Parse(Console.ReadLine());
 
@@ -32,6 +35,18 @@
 
                 case 5:
                     TakeWhile();
+                    break;
+
+                case 6:
+                    FirstOrDefault();
+                    break;
+
+                case 7:
+                    Statistics();
+                    break;
+
+                    case 8:
+                        Any();
                     break;
 
                 default:
@@ -101,8 +116,40 @@
                 Console.WriteLine(item.Price);
             }
         }
+        public static void FirstOrDefault()
+        {
+        }
+        //Saab näha keskmist, kõige kallimat ja loendab
+        static void Statistics()
+        {
+            var average = ProductData.Products.Average(x => x.Price);
+
+            Console.WriteLine("Keskmine hind on " + average);
+
+            var max = ProductData.Products.Max(x => x.Price);
+
+            Console.WriteLine("Kõige kallim hind on " + max);
+
+            //var count = ProductData.Products.Count(Category = "Söök");
+
+            //Console.WriteLine("Söögi kategooriasse kuulub " + count);
+        }
+
+        public static void Any()
+        {
+
+            var any = ProductData.Products.Any(x => x.Price > 500);
+
+            Console.WriteLine("Üle 500 euro maksab " + any);
+        }
     }
 }
+
+
+
+
+
+
 
 
 
