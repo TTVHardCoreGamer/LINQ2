@@ -18,7 +18,7 @@
                 Name = "Kala",
                 Category = "Söök",
                 Price = 29.99,
-                Amount = 5,
+                Amount = 100,
            },
                   new Product()
             {
@@ -50,7 +50,7 @@
                 Name = "Jalanõud",
                 Category = "Riided",
                 Price = 15.99,
-                Amount = 3,
+                Amount = 10000,
            },
                       new Product()
             {
@@ -58,7 +58,7 @@
                 Name = "Leib",
                 Category = "Söök",
                 Price = 2,
-                Amount = 1,
+                Amount = 5,
            },
                        new Product()
             {
