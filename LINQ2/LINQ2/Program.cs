@@ -120,7 +120,7 @@
         {
         }
         //Saab näha keskmist, kõige kallimat ja loendab
-        static void Statistics()
+        public static void Statistics()
         {
             var average = ProductData.Products.Average(x => x.Price);
 
@@ -134,13 +134,14 @@
 
             //Console.WriteLine("Söögi kategooriasse kuulub " + count);
         }
-
+        //teeb kontrolly et kas on midagi olemas ja kirjutab konsooly true kui on
+        //ja false kui ei ole
         public static void Any()
         {
 
             var any = ProductData.Products.Any(x => x.Price > 500);
 
-            Console.WriteLine("Üle 500 euro maksab " + any);
+            Console.WriteLine("Kas midagi maksab üle 500 euro = " + any);
         }
     }
 }
