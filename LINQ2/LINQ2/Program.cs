@@ -8,6 +8,7 @@
             Console.WriteLine("2. OrderBy");
             Console.WriteLine("3. Select");
             Console.WriteLine("4. Skip");
+            Console.WriteLine("5. TakeWhile");
 
             int choise = int.Parse(Console.ReadLine());
 
@@ -27,6 +28,10 @@
 
                 case 4:
                     Skip();
+                    break;
+
+                case 5:
+                    TakeWhile();
                     break;
 
                 default:
@@ -72,15 +77,28 @@
                 Console.WriteLine(item.Category);
             }
         }
+        //jättab vahele asjad seni kaua kui on nõue täidetud
         public static void Skip()
         {
-            var Skip = ProductData.Products
+            var ordeby = ProductData.Products
                 .OrderBy(x => x.Price);
             var skip = ProductData.Products.Skip(4);
 
             foreach (var item in skip)
             {
                 Console.WriteLine(item.Name);
+            }
+        }
+        //põhimõtteliselt sama kui skip
+        public static void TakeWhile()
+        {
+
+            var takewhile = ProductData.Products
+                .TakeWhile(x => x.Price < 90);
+
+            foreach (var item in takewhile)
+            {
+                Console.WriteLine(item.Price);
             }
         }
     }
