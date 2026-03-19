@@ -1,6 +1,6 @@
 ﻿namespace LINQ2
 {
-    public class ClientsList
+    public class ClientData
     {
 
         public static readonly List<Client> Clients = new List<Client>

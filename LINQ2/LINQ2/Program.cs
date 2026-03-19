@@ -6,6 +6,7 @@
         {
             Console.WriteLine("1. Where");
             Console.WriteLine("2. OrderBy");
+            Console.WriteLine("3. Select");
 
             int choise = int.Parse(Console.ReadLine());
 
@@ -19,6 +20,10 @@
                     OrderBy();
                     break;
 
+                case 3:
+                    Select();
+                    break;
+
                 default:
                     Console.WriteLine("Vale valik");
                     break;
@@ -28,16 +33,19 @@
         //, et näiteks kus on hind 60 siis leiab need ja paneb konsooli
         public static void Where()
         {
-            var where = ProductList.Products.Where(x => x.Price > 60);
+            var where = ProductData.Products.Where(x => x.Price > 60);
 
             foreach (var item in where)
             {
                 Console.WriteLine(item.Price);
             }
         }
+        //orderby järjestab tähestikulises järjekorras ära praegu linnad
+        //ja siis nimed selle järgi et kus elavad ja kui elavad samas
+        //linnas siis see kelle nimi hakkab ennem tähega tähestikus on ees
         public static void OrderBy()
         {
-            var orderby = ClientsList.Clients
+            var orderby = ClientData.Clients
                 .OrderBy(x => x.City)
                 .ThenBy(x => x.Name);
 
@@ -46,9 +54,21 @@
                 Console.WriteLine(item.City + " " + item.Name);
             }
         }
+        //Select valib välja käsi järgi koodist asjad
+        public static void Select()
+        {
+            var select = ProductData.Products
+                        .Select(x => new
+                        {
+                            Category = x.Category,
+                        });
+            foreach (var item in select)
+            {
+                Console.WriteLine(item.Category);
+            }
+        }
     }
 }
-
 
 
 

@@ -1,6 +1,6 @@
 ﻿namespace LINQ2
 {
-    public class OrderList
+    public class OrderData
     {
         public static readonly List<Order> Orders = new List<Order>
         {

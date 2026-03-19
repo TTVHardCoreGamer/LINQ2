@@ -1,6 +1,6 @@
 ﻿namespace LINQ2
 {
-    public class ProductList
+    public class ProductData
     {
         public static readonly List<Product> Products = new List<Product>
         {
